@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - HomeSpace</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <nav>
+            <a href="index.html" class="logo-link">
+                <div class="logo">
+                    <img src="HomeSpaceLogo.png" alt="HomeSpace Logo">
+                    <h1 id="logoNameNav">HomeSpace</h1>
+                </div>
+            </a>
+            <button class="menu-toggle">
+                <i class="fa-solid fa-list"></i>
+            </button>
+            <div class="navRight">
+                <a href="index.html" id="homeNav">Kryefaqja</a>
+                <a href="pronat.html" id="propertiesNav">Pronat</a>
+                <a href="about.html" id="aboutNav">Rreth Nesh</a>
+                <a href="contact.html" id="contactNav">Kontakti</a>
+                <div class="langdiv">
+                    <button class="lang-btn" id="langbtn">🌐 Gjuha</button>
+                    <div class="lang-dropdown">
+                        <button onclick="setLang('en')">English</button>
+                        <button onclick="setLang('al')">Shqip</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="content">
+            <section class="contact-hero">
+                <h1 data-lang="contactHeroTitle">Na Kontaktoni</h1>
+                <p data-lang="contactHeroDesc">Jemi këtu për t'ju ndihmuar. Mos hezitoni të na kontaktoni!</p>
+            </section>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2 data-lang="contactInfoTitle">Informacion Kontakti</h2>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3 data-lang="addressTitle">Adresa</h3>
+                            <p data-lang="addressContent">Rruga Myslym Shyri, Nr. 42<br>Tiranë, Shqipëri 1001</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3 data-lang="phoneTitle">Telefon</h3>
+                            <p>
+                                <a href="tel:+355670000000">+355 67 xxxx 0000</a><br>
+                                <a href="tel:+355042123456">+355 04 xxxx 456</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3 data-lang="emailTitle">Email</h3>
+                            <p>
+                                <a href="mailto:info@homespace.com">xx@xxx.com</a><br>
+                                <a href="mailto:support@homespace.com">support@xxxx.com</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3 data-lang="hoursTitle">Orari i Punës</h3>
+                            <p data-lang="hoursContent">
+                                E Hënë - E Premte: 09:00 - 18:00<br>
+                                E Shtunë: 09:00 - 14:00<br>
+                                E Diel: Mbyllur
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <h3 data-lang="socialTitle">Na Ndiqni</h3>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h2 data-lang="formTitle">Dërgoni një Mesazh</h2>
+                    <div class="success-message" id="successMessage" data-lang="successMsg">
+                        Mesazhi juaj u dërgua me sukses! Do t'ju kontaktojmë së shpejti.
+                    </div>
+                    <div class="form-group">
+                        <label data-lang="nameLabel">Emri dhe Mbiemri *</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-lang="emailLabel">Email *</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-lang="phoneLabel">Telefon</label>
+                        <input type="tel" id="phone">
+                    </div>
+                    <div class="form-group">
+                        <label data-lang="subjectLabel">Subjekti</label>
+                        <select id="subject">
+                            <option value="general" data-lang="subjectGeneral">Pyetje e Përgjithshme</option>
+                            <option value="property" data-lang="subjectProperty">Pyetje për Pronë</option>
+                            <option value="appointment" data-lang="subjectAppointment">Kërkesë për Takim</option>
+                            <option value="other" data-lang="subjectOther">Tjetër</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label data-lang="messageLabel">Mesazhi *</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    <button type="button" class="btn-submit" id="submitBtn" data-lang="submitBtn">Dërgo Mesazhin</button>
+                </div>
+            </div>
+
+            <div class="map-section">
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.304482782!2d19.8153!3d41.3275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDE5JzM5LjAiTiAxOcKwNDgnNTUuMSJF!5e0!3m2!1sen!2sal!4v1234567890"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3 data-lang="footerTitle">HomeSpace</h3>
+                    <p data-lang="footerDesc">Platformë moderne për prona dhe banesa.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 data-lang="footerSocialTitle">Rrjetet Sociale</h4>
+                    <p data-lang="footerInstagram">Instagram: example_22</p>
+                    <p data-lang="footerLinkedIn">LinkedIn: example.com</p>
+                </div>
+                <div class="footer-col">
+                    <h4 data-lang="footerContactTitle">Kontakt</h4>
+                    <p data-lang="footerEmail">Email: info@homespace.com</p>
+                    <p data-lang="footerPhone">Tel: +355 67 000 0000</p>
+                </div>
+                <div class="footer-col footer-logo">
+                    <img src="HomeSpaceLogo.png" alt="HomeSpace Logo">
+                </div>
+            </div>
+            <div class="footer-bottom" data-lang="footerBottom">
+                © 2025 HomeSpace — Të gjitha të drejtat e rezervuara.
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        
+
+
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            document.querySelector('.navRight').classList.toggle('show');
+        });
+
+        document.querySelector('.lang-btn').addEventListener('click', (e) => {
+            e.stopPropagation();
+            document.querySelector('.langdiv').classList.toggle('show');
+        });
+
+        window.addEventListener('click', (e) => {
+            if (!document.querySelector('.langdiv').contains(e.target)) {
+                document.querySelector('.langdiv').classList.remove('show');
+            }
+        });
+
+        document.getElementById('submitBtn').addEventListener('click', () => {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (name && email && message) {
+                document.getElementById('successMessage').style.display = 'block';
+                document.getElementById('name').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('phone').value = '';
+                document.getElementById('message').value = '';
+                
+                setTimeout(() => {
+                    document.getElementById('successMessage').style.display = 'none';
+                }, 5000);
+            } else {
+                alert('Ju lutem plotësoni të gjitha fushat e kërkuara!');
+            }
+        });
+
+        setLang('al');
+        
+    </script>
+    <script src="js/lang.js"></script>
+    <script src="js/functionalities.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Property Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<nav>
+            <a href="index.html" class="logo-link">
+                <div class="logo">
+                    <img src="HomeSpaceLogo.png" alt="HomeSpace Logo">
+                    <h1 id="logoNameNav">HomeSpace</h1>
+                </div>
+            </a>
+            <button class="menu-toggle">
+                <i class="fa-solid fa-list"></i>
+            </button>
+            <div class="navRight">
+                <a href="index.html" id="homeNav">Kryefaqja</a>
+                <a href="pronat.html" id="propertiesNav">Pronat</a>
+                <a href="about.html" id="aboutNav">Rreth Nesh</a>
+                <a href="contact.html" id="contactNav">Kontakti</a>
+                <div class="langdiv">
+                    <button class="lang-btn" id="langbtn">🌐 Gjuha</button>
+                    <div class="lang-dropdown">
+                        <button onclick="setLang('en')">English</button>
+                        <button onclick="setLang('al')">Shqip</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+<!-- Back Button -->
+<div class="property-back">
+    <a href="pronat.html"><i class="fas fa-arrow-left"></i> Kthehu te Pronat</a>
+</div>
+
+<!-- Property Details -->
+<section class="property-page">
+
+    <img id="property-image" class="property-main-image" alt="Property image">
+
+    <div class="property-info">
+        <h1 id="property-title"></h1>
+
+        <p class="property-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span id="property-location"></span>
+        </p>
+
+        <p class="property-price" id="property-price"></p>
+
+        <div class="property-features">
+            <div><i class="fas fa-bed"></i> <span id="beds"></span> Dhoma</div>
+            <div><i class="fas fa-bath"></i> <span id="baths"></span> Banjo</div>
+            <div><i class="fas fa-ruler-combined"></i> <span id="size"></span> m²</div>
+        </div>
+
+        <p class="property-description" id="description"></p>
+
+        <button class="btn-details">Kontakto Agjentin</button>
+    </div>
+
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const id = new URLSearchParams(window.location.search).get("id");
+
+    const properties = {
+    "1": {
+        title: "Apartament Modern në Qendër",
+        location: "Tiranë, Blloku",
+        price: "€145,000",
+        beds: 3,
+        baths: 2,
+        size: 120,
+        image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900",
+        description: "Apartament modern me ndriçim natyral, i mobiluar dhe shumë pranë shërbimeve kryesore."
+    },
+    "2": {
+        title: "Vilë Luksoze me Pamje Deti",
+        location: "Durrës, Plazh",
+        price: "€450,000",
+        beds: 5,
+        baths: 4,
+        size: 350,
+        image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=900",
+        description: "Vilë luksoze me oborr privat, pamje fantastike nga deti dhe ambiente shumë të bollshme."
+    },
+    "3": {
+        title: "Apartament Komod Familjar",
+        location: "Vlorë, Lungomare",
+        price: "€95,000",
+        beds: 2,
+        baths: 1,
+        size: 85,
+        image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=900",
+        description: "Zgjedhje perfekte për familje, afër detit dhe zonave rekreative."
+    },
+    "4": {
+        title: "Shtëpi me Oborr të Madh",
+        location: "Tiranë, Kashar",
+        price: "€220,000",
+        beds: 4,
+        baths: 3,
+        size: 200,
+        image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900",
+        description: "Shtëpi private me oborr të madh, ideale për familje që kërkojnë qetësi dhe hapësirë."
+    },
+    "5": {
+        title: "Vilë me Pishinë në Kodër",
+        location: "Tiranë, Dajti",
+        price: "€580,000",
+        beds: 6,
+        baths: 5,
+        size: 420,
+        image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=900",
+        description: "Vilë ekskluzive me pishinë, pamje panoramike dhe dizajn modern luksoz."
+    },
+    "6": {
+        title: "Penthouse me Panoramë",
+        location: "Tiranë, Qendër",
+        price: "€320,000",
+        beds: 4,
+        baths: 3,
+        size: 180,
+        image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=900",
+        description: "Penthouse modern me tarracë të madhe dhe pamje mahnitëse të qytetit."
+    }
+};
+
+
+    const p = properties[id];
+    if (!p) return;
+
+    document.getElementById("property-title").textContent = p.title;
+    document.getElementById("property-location").textContent = p.location;
+    document.getElementById("property-price").textContent = p.price;
+    document.getElementById("beds").textContent = p.beds;
+    document.getElementById("baths").textContent = p.baths;
+    document.getElementById("size").textContent = p.size;
+    document.getElementById("description").textContent = p.description;
+    document.getElementById("property-image").src = p.image;
+
+});
+</script>
+
+</body>
+</html>

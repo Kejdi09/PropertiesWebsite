@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pronat - HomeSpace</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <nav>
+            <a href="index.html" class="logo-link">
+                <div class="logo">
+                    <img src="HomeSpaceLogo.png" alt="HomeSpace Logo">
+                    <h1 id="logoNameNav">HomeSpace</h1>
+                </div>
+            </a>
+            <button class="menu-toggle">
+                <i class="fa-solid fa-list"></i>
+            </button>
+            <div class="navRight">
+                <a href="index.html" id="homeNav">Kryefaqja</a>
+                <a href="pronat.html" id="propertiesNav">Pronat</a>
+                <a href="about.html" id="aboutNav">Rreth Nesh</a>
+                <a href="contact.html" id="contactNav">Kontakti</a>
+                <div class="langdiv">
+                    <button class="lang-btn" id="langbtn">🌐 Gjuha</button>
+                    <div class="lang-dropdown">
+                        <button onclick="setLang('en')">English</button>
+                        <button onclick="setLang('al')">Shqip</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="content">
+            <section class="properties-hero">
+                <h1 data-lang="propertiesPageTitle">Zbuloni Pronën Tuaj Ideale</h1>
+                <p data-lang="propertiesPageDesc">Më shumë se 500 prona në dispozicion në të gjithë Shqipërinë</p>
+            </section>
+
+            <section class="filters-section">
+                <div class="filters-grid">
+                    <div class="filter-group">
+                        <label data-lang="filterLocation">Lokacioni</label>
+                        <select>
+                            <option>Të gjitha qytetet</option>
+                            <option>Tiranë</option>
+                            <option>Durrës</option>
+                            <option>Vlorë</option>
+                            <option>Shkodër</option>
+                            <option>Elbasan</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label data-lang="filterType">Tipi</label>
+                        <select>
+                            <option>Të gjitha tipet</option>
+                            <option>Apartament</option>
+                            <option>Vilë</option>
+                            <option>Shtëpi</option>
+                            <option>Zyrë</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label data-lang="filterPrice">Çmimi</label>
+                        <select>
+                            <option>Të gjitha çmimet</option>
+                            <option>Deri në 50,000€</option>
+                            <option>50,000€ - 100,000€</option>
+                            <option>100,000€ - 200,000€</option>
+                            <option>Mbi 200,000€</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <button class="btn-filter" data-lang="filterBtn">Kërko</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="properties-container">
+                <div class="properties-grid">
+                    <div class="property-card">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400" alt="Property" class="property-image">
+                        <div class="property-details">
+                            <span class="property-type" data-lang="typeApartment">Apartament</span>
+                            <h3 class="property-title" data-lang="prop1Title">Apartament Modern në Qendër</h3>
+                            <div class="property-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-lang="prop1Location">Tiranë, Blloku</span>
+                            </div>
+                            <div class="property-features">
+                                <div class="feature">
+                                    <i class="fas fa-bed"></i>
+                                    <span>3</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-bath"></i>
+                                    <span>2</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>120m²</span>
+                                </div>
+                            </div>
+                            <div class="property-price">€145,000</div>
+                            <div class="property-actions">
+                                <a href="property_details.html?id=1" class="btn-details" data-lang="viewDetails">
+    Shiko Detajet
+</a>
+
+                                <button class="btn-favorite"><i class="fas fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="property-card">
+                        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400" alt="Property" class="property-image">
+                        <div class="property-details">
+                            <span class="property-type" data-lang="typeVilla">Vilë</span>
+                            <h3 class="property-title" data-lang="prop2Title">Vilë Luksoze me Pamje Deti</h3>
+                            <div class="property-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-lang="prop2Location">Durrës, Plazh</span>
+                            </div>
+                            <div class="property-features">
+                                <div class="feature">
+                                    <i class="fas fa-bed"></i>
+                                    <span>5</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-bath"></i>
+                                    <span>4</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>350m²</span>
+                                </div>
+                            </div>
+                            <div class="property-price">€450,000</div>
+                            <div class="property-actions">
+                                <a href="property_details.html?id=2" class="btn-details" data-lang="viewDetails">
+    Shiko Detajet
+</a>
+
+                                <button class="btn-favorite"><i class="fas fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="property-card">
+                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400" alt="Property" class="property-image">
+                        <div class="property-details">
+                            <span class="property-type" data-lang="typeApartment">Apartament</span>
+                            <h3 class="property-title" data-lang="prop3Title">Apartament Komod Familjar</h3>
+                            <div class="property-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-lang="prop3Location">Vlorë, Lungomare</span>
+                            </div>
+                            <div class="property-features">
+                                <div class="feature">
+                                    <i class="fas fa-bed"></i>
+                                    <span>2</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-bath"></i>
+                                    <span>1</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>85m²</span>
+                                </div>
+                            </div>
+                            <div class="property-price">€95,000</div>
+                            <div class="property-actions">
+                                <a href="property_details.html?id=3" class="btn-details" data-lang="viewDetails">
+    Shiko Detajet
+</a>
+
+                                <button class="btn-favorite"><i class="fas fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="property-card">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400" alt="Property" class="property-image">
+                        <div class="property-details">
+                            <span class="property-type" data-lang="typeHouse">Shtëpi</span>
+                            <h3 class="property-title" data-lang="prop4Title">Shtëpi me Oborr të Madh</h3>
+                            <div class="property-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-lang="prop4Location">Tiranë, Kashar</span>
+                            </div>
+                            <div class="property-features">
+                                <div class="feature">
+                                    <i class="fas fa-bed"></i>
+                                    <span>4</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-bath"></i>
+                                    <span>3</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>200m²</span>
+                                </div>
+                            </div>
+                            <div class="property-price">€220,000</div>
+                            <div class="property-actions">
+                                <a href="property_details.html?id=4" class="btn-details" data-lang="viewDetails">
+    Shiko Detajet
+</a>
+
+                                <button class="btn-favorite"><i class="fas fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="property-card">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400" alt="Property" class="property-image">
+                        <div class="property-details">
+                            <span class="property-type" data-lang="typeVilla">Vilë</span>
+                            <h3 class="property-title" data-lang="prop5Title">Vilë me Pishinë në Kodër</h3>
+                            <div class="property-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-lang="prop5Location">Tiranë, Dajti</span>
+                            </div>
+                            <div class="property-features">
+                                <div class="feature">
+                                    <i class="fas fa-bed"></i>
+                                    <span>6</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-bath"></i>
+                                    <span>5</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>420m²</span>
+                                </div>
+                            </div>
+                            <div class="property-price">€580,000</div>
+                            <div class="property-actions">
+                                <a href="property_details.html?id=5" class="btn-details" data-lang="viewDetails">
+    Shiko Detajet
+</a>
+
+                                <button class="btn-favorite"><i class="fas fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="property-card">
+                        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400" alt="Property" class="property-image">
+                        <div class="property-details">
+                            <span class="property-type" data-lang="typeApartment">Apartament</span>
+                            <h3 class="property-title" data-lang="prop6Title">Penthouse me Panoramë</h3>
+                            <div class="property-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-lang="prop6Location">Tiranë, Qendër</span>
+                            </div>
+                            <div class="property-features">
+                                <div class="feature">
+                                    <i class="fas fa-bed"></i>
+                                    <span>4</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-bath"></i>
+                                    <span>3</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>180m²</span>
+                                </div>
+                            </div>
+                            <div class="property-price">€320,000</div>
+                            <div class="property-actions">
+                                <a href="property_details.html?id=6" class="btn-details" data-lang="viewDetails">
+    Shiko Detajet
+</a>
+
+                                <button class="btn-favorite"><i class="fas fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3 data-lang="footerTitle">HomeSpace</h3>
+                    <p data-lang="footerDesc">Platformë moderne për prona dhe banesa.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 data-lang="footerSocialTitle">Rrjetet Sociale</h4>
+                    <p data-lang="footerInstagram">Instagram: example_22</p>
+                    <p data-lang="footerLinkedIn">LinkedIn: example.com</p>
+                </div>
+                <div class="footer-col">
+                    <h4 data-lang="footerContactTitle">Kontakt</h4>
+                    <p data-lang="footerEmail">Email: info@homespace.com</p>
+                    <p data-lang="footerPhone">Tel: +355 67 000 0000</p>
+                </div>
+                <div class="footer-col footer-logo">
+                    <img src="HomeSpaceLogo.png" alt="HomeSpace Logo">
+                </div>
+            </div>
+            <div class="footer-bottom" data-lang="footerBottom">
+                © 2025 HomeSpace — Të gjitha të drejtat e rezervuara.
+            </div>
+        </footer>
+    </div>
+    <script src="js/lang.js"></script>
+<script src="js/functions.js"></script>
+</body>
+</html>
+
+    

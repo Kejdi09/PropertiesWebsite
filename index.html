@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeSpace - Gjej Shtepine e Enderrave</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- HEADER -->
+        <nav>
+            <a href="index.html" class="logo-link">
+                <div class="logo">
+                    <img src="HomeSpaceLogo.png" alt="HomeSpace Logo">
+                    <h1 id="logoNameNav">HomeSpace</h1>
+                </div>
+            </a>
+            <button class="menu-toggle">
+                <i class="fa-solid fa-list"></i>
+            </button>
+            <div class="navRight">
+                <a href="index.html" id="homeNav">Kryefaqja</a>
+                <a href="pronat.html" id="propertiesNav">Pronat</a>
+                <a href="about.html" id="aboutNav">Rreth Nesh</a>
+                <a href="contact.html" id="contactNav">Kontakti</a>
+                <div class="langdiv">
+                    <button class="lang-btn" id="langbtn">🌐 Gjuha</button>
+                    <div class="lang-dropdown">
+                        <button onclick="setLang('en')">English</button>
+                        <button onclick="setLang('al')">Shqip</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <div class="content">
+            <!-- HERO SECTION -->
+           <section class="hero">
+    <div class="hero-content">
+        <h1 data-lang="heroTitle">Gjej Shtepine e Enderrave</h1>
+        <p data-lang="heroDesc">Prona të sigurta dhe të përshtatura për ty.</p>
+        <a href="#recommended" class="btn-primary" data-lang="heroBtn">Shiko Prona</a>
+    </div>
+</section>
+
+<!-- RECOMMENDED PROPERTIES -->
+<section class="recommended" id="recommended">
+    <h2 data-lang="recommendedTitle">Prona të Rekomanduara</h2>
+    <div class="properties-grid">
+        <div class="property-card">
+            <img src="adventure-albania-gOSd8RoqxRU-unsplash.jpg" alt="Prona 1">
+            <div class="overlay">
+                <h3 data-lang="property1Title">Banese Moderne</h3>
+                <p data-lang="property1Location">Tiranë, Shqipëri</p>
+            </div>
+        </div>
+        <div class="property-card">
+            <img src="the-prototype-oIg_mG1SJJA-unsplash.jpg" alt="Prona 2">
+            <div class="overlay">
+                <h3 data-lang="property2Title">Vilë Luksoze</h3>
+                <p data-lang="property2Location">Durrës, Shqipëri</p>
+            </div>
+        </div>
+        <div class="property-card">
+            <img src="derick-mckinney-XnXNWsXWG9Y-unsplash.jpg" alt="Prona 3">
+            <div class="overlay">
+                <h3 data-lang="property3Title">Apartament Komod</h3>
+                <p data-lang="property3Location">Vlorë, Shqipëri</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why-us">
+    <h2 data-lang="whyTitle">Pse të na Zgjidhni</h2>
+    <div class="why-grid">
+        <div class="why-card">
+            <i class="fas fa-home"></i>
+            <h3 data-lang="why1Title">Prona të Sigurta</h3>
+            <p data-lang="why1Desc">Verifikim i plotë i dokumentacionit dhe pronarëve.</p>
+        </div>
+        <div class="why-card">
+            <i class="fas fa-users"></i>
+            <h3 data-lang="why2Title">Mbështetje Profesionale</h3>
+            <p data-lang="why2Desc">Ekipi ynë është gjithmonë gati për të ndihmuar.</p>
+        </div>
+        <div class="why-card">
+            <i class="fas fa-thumbs-up"></i>
+            <h3 data-lang="why3Title">Përshtatje për Ju</h3>
+            <p data-lang="why3Desc">Kërkoni dhe gjeni prona që përputhen me nevojat tuaja.</p>
+        </div>
+    </div>
+</section>
+
+        </div>
+
+        <!-- FOOTER -->
+        <div id="footer-placeholder"></div>
+    </div>
+
+    <script src="js/lang.js"></script>
+    <script src="js/functions.js"></script>
+</body>
+</html>
