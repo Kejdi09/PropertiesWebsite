@@ -13,10 +13,16 @@ HomeSpace is a front-end web application built with vanilla HTML, CSS, and JavaS
 
 - **Bilingual Interface**: Complete Albanian and English language support with dynamic switching
 - **Responsive Design**: Mobile-first approach ensuring optimal viewing across all devices
-- **Property Listings**: Browse and filter featured properties with detailed information
-- **Property Details**: Individual pages with comprehensive property specifications
-- **Contact System**: Integrated contact form for user inquiries
-- **Modern UI**: Clean design with smooth animations and transitions
+- **Advanced Property Search**: Filter properties by location, type (apartment, villa, house, office), and price range
+- **Property Listings**: Browse multiple properties with image previews, prices, and key specifications (bedrooms, bathrooms, size)
+- **Property Details Page**: Individual pages with comprehensive property information, high-resolution images, and agent contact options
+- **Favorite Properties**: Heart icon to mark and save favorite listings
+- **Interactive Property Cards**: Hover effects and quick-view functionality
+- **Contact System**: Integrated contact form with validation and success messaging
+- **About Page**: Company story, statistics, team profiles, and core values presentation
+- **Contact Information**: Complete contact details including address, phone, email, and business hours
+- **Social Media Integration**: Links to social platforms in footer and contact page
+- **Modern UI**: Clean design with Font Awesome icons, smooth animations, and professional typography
 
 ## Technology Stack
 
@@ -69,28 +75,38 @@ PropertiesWebsite/
 
 ## Usage
 
-- Navigate to "Pronat" to view available properties
-- Use the language selector to toggle between Albanian and English
-- Click on property cards to view detailed information
-- Use the contact form for inquiries
+- **Homepage**: View featured properties and company highlights
+- **Properties Page**: Browse all listings with advanced filtering by location, property type, and price range
+- **Property Details**: Click "Shiko Detajet" on any property card to view full specifications, images, and contact options
+- **Language Switching**: Click the language selector (🌐) in the navigation to toggle between Albanian and English
+- **Favorites**: Click the heart icon on property cards to mark favorites
+- **About**: Learn about the company history, values, and team
+- **Contact**: Use the contact form or find direct contact information including phone and email
 
 ## Development
 
 ### Current Implementation
-- Multi-page navigation system
-- Bilingual interface (AL/EN)
-- Responsive grid layout
-- Property cards with interactive elements
-- Form validation
-- Mobile navigation menu
+- Multi-page navigation system with 5 main pages (Home, Properties, Property Details, About, Contact)
+- Bilingual interface (Albanian/English) with dynamic content switching
+- Responsive grid layout with mobile hamburger menu
+- Advanced property filtering (location, type, price)
+- Property cards with hover effects and favorite functionality
+- Individual property detail pages with dynamic URL parameters
+- Contact form with client-side validation
+- Team profiles and company statistics
+- Social media integration
+- Font Awesome icons throughout
 
 ### Future Enhancements
-- Property search and filtering
-- Backend integration
-- User authentication
-- Advanced filtering (price, location, type)
-- Image gallery with lightbox
-- Map integration
+- Backend integration with database
+- User authentication and user accounts
+- Save favorite properties to user profile
+- Live property search with AJAX
+- Image gallery with lightbox modal
+- Interactive map with property locations
+- Property comparison feature
+- Online appointment booking
+- Virtual property tours
 
 ## Author
 
