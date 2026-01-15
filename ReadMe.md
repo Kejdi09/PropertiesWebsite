@@ -45,9 +45,12 @@ PropertiesWebsite/
 ├── footer.html            # Footer component
 ├── css/
 │   └── style.css          # Main stylesheet
-└── js/
-    ├── functions.js       # Core functionality
-    └── lang.js            # Language switching logic
+├── js/
+│   ├── functions.js       # Core functionality
+│   └── lang.js            # Language switching logic
+└── images/
+    ├── HomeSpaceLogo.png  # Company logo
+    └── *.jpg              # Property images
 ```
 
 ## Installation
