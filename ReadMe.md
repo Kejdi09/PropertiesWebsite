@@ -3,65 +3,48 @@
 ![Status](https://img.shields.io/badge/status-active-success.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-A modern, responsive real estate website built during my internship at Dominusoft. HomeSpace helps users discover and explore properties for rent or purchase with a clean, user-friendly interface.
+A modern, responsive real estate website developed during my internship at Dominusoft. HomeSpace provides a bilingual platform for browsing properties available for rent or purchase.
 
-## 🏠 About The Project
+## Overview
 
-HomeSpace is a front-end web application for a property/real estate company. The website features a bilingual interface (Albanian & English) and showcases properties with detailed information, images, and contact forms. Built with pure HTML, CSS, and JavaScript to demonstrate core web development skills.
+HomeSpace is a front-end web application built with vanilla HTML, CSS, and JavaScript. The website features full Albanian and English language support, responsive design, and an intuitive interface for property exploration.
 
-### ✨ Key Features
+## Features
 
-- **🌍 Bilingual Support**: Full Albanian and English language support with dynamic switching
-- **📱 Responsive Design**: Mobile-first approach ensuring great experience on all devices
-- **🏘️ Property Listings**: Browse featured and recommended properties with detailed information
-- **🔍 Property Details**: Individual property pages with comprehensive details
-- **📧 Contact Form**: User-friendly contact page for inquiries
-- **🎨 Modern UI/UX**: Clean design with smooth animations and transitions
-- **⚡ Fast & Lightweight**: Pure vanilla JavaScript - no frameworks, optimized performance
+- **Bilingual Interface**: Complete Albanian and English language support with dynamic switching
+- **Responsive Design**: Mobile-first approach ensuring optimal viewing across all devices
+- **Property Listings**: Browse and filter featured properties with detailed information
+- **Property Details**: Individual pages with comprehensive property specifications
+- **Contact System**: Integrated contact form for user inquiries
+- **Modern UI**: Clean design with smooth animations and transitions
 
-## 🚀 Live Demo
+## Technology Stack
 
-[View Live Site](#) _(Add your deployment link here)_
+- HTML5
+- CSS3 (Flexbox/Grid)
+- JavaScript (ES6+)
+- Font Awesome
+- Google Fonts (Poppins, Roboto)
 
-## 📸 Screenshots
-
-_(Add screenshots of your website here)_
-
-## 🛠️ Built With
-
-- **HTML5** - Semantic markup
-- **CSS3** - Modern styling with Flexbox/Grid
-- **JavaScript (ES6+)** - Dynamic functionality
-- **Font Awesome** - Icons
-- **Google Fonts** - Typography (Poppins, Roboto)
-
-## 📂 Project Structure
+## Project Structure
 
 ```
-HomeSpace/
+PropertiesWebsite/
 ├── index.html              # Homepage
 ├── pronat.html            # Properties listing page
 ├── property_details.html  # Individual property details
-├── about.html             # About us page
+├── about.html             # About page
 ├── contact.html           # Contact page
 ├── header.html            # Header component
 ├── footer.html            # Footer component
 ├── css/
 │   └── style.css          # Main stylesheet
-├── js/
-│   ├── functions.js       # Core functionality
-│   └── lang.js            # Language switching logic
-└── README.md              # Project documentation
+└── js/
+    ├── functions.js       # Core functionality
+    └── lang.js            # Language switching logic
 ```
 
-## 🚦 Getting Started
-
-### Prerequisites
-
-- A modern web browser (Chrome, Firefox, Safari, Edge)
-- A local web server (optional, but recommended)
-
-### Installation
+## Installation
 
 1. Clone the repository
    ```bash
@@ -80,64 +63,39 @@ HomeSpace/
    
    # Using Node.js
    npx serve
-   
-   # Or simply open index.html in your browser
    ```
 
 4. Visit `http://localhost:8000` in your browser
 
-## 💡 Usage
+## Usage
 
-- **Browse Properties**: Navigate to the "Pronat" page to view available properties
-- **Switch Languages**: Click the language selector (🌐 Gjuha) to toggle between Albanian and English
-- **View Details**: Click on any property card to see full details
-- **Contact Us**: Use the contact form to send inquiries
+- Navigate to "Pronat" to view available properties
+- Use the language selector to toggle between Albanian and English
+- Click on property cards to view detailed information
+- Use the contact form for inquiries
 
-## 🎯 Features Breakdown
+## Development
 
-### Implemented
-- ✅ Multi-page navigation system
-- ✅ Bilingual interface (AL/EN)
-- ✅ Responsive grid layout
-- ✅ Property cards with hover effects
-- ✅ Contact form with validation
-- ✅ Mobile-friendly menu
-- ✅ Smooth scrolling
-- ✅ Dynamic content loading
+### Current Implementation
+- Multi-page navigation system
+- Bilingual interface (AL/EN)
+- Responsive grid layout
+- Property cards with interactive elements
+- Form validation
+- Mobile navigation menu
 
 ### Future Enhancements
-- 🔄 Property search and filtering
-- 🔄 Backend integration
-- 🔄 User authentication
-- 🔄 Favorites/Wishlist functionality
-- 🔄 Advanced property filtering (price, location, type)
-- 🔄 Image gallery with lightbox
-- 🔄 Interactive map integration
+- Property search and filtering
+- Backend integration
+- User authentication
+- Advanced filtering (price, location, type)
+- Image gallery with lightbox
+- Map integration
 
-## 📝 Lessons Learned
+## Author
 
-This project was developed as part of my internship at Dominusoft, where I gained hands-on experience with:
-- Building responsive layouts from scratch
-- Implementing multi-language support
-- Managing project structure and organization
-- Writing clean, maintainable code
-- Working with real-world client requirements
+Kejdi - [@Kejdi09](https://github.com/Kejdi09)
 
-## 👨‍💻 Author
+## License
 
-**Kejdi** - [@Kejdi09](https://github.com/Kejdi09)
-
-## 📄 License
-
-This project was created for educational purposes during my internship at Dominusoft.
-
-## 🙏 Acknowledgments
-
-- Dominusoft for the internship opportunity
-- Font Awesome for icons
-- Google Fonts for typography
-- Inspiration from modern real estate websites
-
----
-
-⭐ If you found this project helpful, please consider giving it a star!
+This project was created for educational purposes during an internship at Dominusoft.
