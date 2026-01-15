@@ -37,9 +37,11 @@ const lang = {
         filterType: "Type",
         filterPrice: "Price",
         filterBtn: "Search",
+        filterTitle: "Advanced Filters",
         typeApartment: "Apartment",
         typeVilla: "Villa",
         typeHouse: "House",
+        noResults: "No properties found.",
         prop1Title: "Modern Downtown Apartment",
         prop1Location: "Tirana, Blloku",
         prop2Title: "Luxury Villa with Sea View",
@@ -52,6 +54,18 @@ const lang = {
         prop5Location: "Tirana, Dajti",
         prop6Title: "Penthouse with Panorama",
         prop6Location: "Tirana, Center",
+        prop1Desc1: "This modern downtown apartment is located in Tirana's trendy Blloku neighborhood with bright interiors and contemporary design.",
+        prop1Desc2: "Fully renovated with elevator access and close to restaurants, shops, and cultural attractions.",
+        prop2Desc1: "Luxury villa offering breathtaking sea views, infinity pool, and premium finishes in Durres Beach.",
+        prop2Desc2: "Designed for entertaining with landscaped garden, home gym, and smart home features.",
+        prop3Desc1: "Cozy family apartment along Vlore Lungomare with sea view and beach access.",
+        prop3Desc2: "Modern kitchen, smart amenities, and perfect for relaxed seaside living.",
+        prop4Desc1: "Spacious house in Kashar with a large 800m² garden and family-friendly layout.",
+        prop4Desc2: "Features modern kitchen, fireplace, parking, and ample outdoor space for gatherings.",
+        prop5Desc1: "Hillside villa in Dajti with resort-style pool and panoramic mountain views.",
+        prop5Desc2: "Luxury amenities include spa area, wine cellar, smart home, and landscaped gardens.",
+        prop6Desc1: "Prestigious penthouse with 360° skyline views in the center of Tirana.",
+        prop6Desc2: "Floor-to-ceiling windows, expansive terrace, and concierge services for premium city living.",
         viewDetails: "View Details",
         
         // About Page
@@ -107,6 +121,65 @@ const lang = {
         submitBtn: "Send Message",
         
         // Footer
+        // Property Detail Pages
+        backToProperties: "Back to Properties",
+        bedrooms: "Bedrooms",
+        bathrooms: "Bathrooms",
+        floorArea: "Floor Area",
+        aboutThisProperty: "About This Property",
+        amenities: "Amenities",
+        additionalInfo: "Additional Information",
+        contactAgent: "Contact Agent",
+        propertyType: "Property Type",
+        builtYear: "Built Year",
+        condition: "Condition",
+        heating: "Heating",
+        excellent: "Excellent",
+        underfloor: "Underfloor Heating",
+        central: "Central",
+        topFloor: "Top Floor",
+        penthouse: "Penthouse",
+        agentMessage: "We will contact you soon after your message.",
+        highSpeedInternet: "High-Speed Internet",
+        airConditioning: "Air Conditioning",
+        elevatorAccess: "Elevator Access",
+        parkingSpace: "Parking Space",
+        security: "Security",
+        gymAccess: "Gym Access",
+        terrace: "Terrace",
+        greenArea: "Green Area",
+        privateBeachAccess: "Private Beach Access",
+        infinityPool: "Infinity Pool",
+        landscapedGarden: "Landscaped Garden",
+        jacuzzi: "Jacuzzi",
+        homeGym: "Home Gym",
+        wineCellar: "Wine Cellar",
+        outdoorLounge: "Outdoor Lounge",
+        smartHome: "Smart Home",
+        seaView: "Sea View",
+        beachAccess: "Beach Access",
+        modernKitchen: "Modern Kitchen",
+        wifi: "WiFi",
+        smartTV: "Smart TV",
+        balconyTerrace: "Balcony Terrace",
+        largeGarden: "Large Garden",
+        fruitTrees: "Fruit Trees",
+        spaciousRooms: "Spacious Rooms",
+        fireplace: "Fireplace",
+        internetReady: "Internet Ready",
+        resortPool: "Resort Pool",
+        panoramicViews: "Panoramic Views",
+        spaArea: "Spa Area",
+        securitySystem: "Security System",
+        rooftopTerrace: "Rooftop Terrace",
+        concierge: "Concierge",
+        privateElevator: "Private Elevator",
+        privateSpa: "Private Spa",
+        wineBar: "Wine Bar",
+        fullSmartHome: "Full Smart Home",
+        security247: "24/7 Security",
+        
+        // Footer
         footerTitle: "HomeSpace",
         footerDesc: "Modern platform for properties and apartments.",
         footerSocialTitle: "Social Media",
@@ -155,9 +228,11 @@ const lang = {
         filterType: "Tipi",
         filterPrice: "Çmimi",
         filterBtn: "Kërko",
+        filterTitle: "Filtra Avancuar",
         typeApartment: "Apartament",
         typeVilla: "Vilë",
         typeHouse: "Shtëpi",
+        noResults: "Nuk u gjetën prona.",
         prop1Title: "Apartament Modern në Qendër",
         prop1Location: "Tiranë, Blloku",
         prop2Title: "Vilë Luksoze me Pamje Deti",
@@ -170,6 +245,18 @@ const lang = {
         prop5Location: "Tiranë, Dajti",
         prop6Title: "Penthouse me Panoramë",
         prop6Location: "Tiranë, Qendër",
+        prop1Desc1: "Ky apartament modern në qendër ndodhet në lagjen trendi Blloku me ambiente të ndriçuara dhe dizajn bashkëkohor.",
+        prop1Desc2: "Totalisht i rinovuar me ashensor dhe pranë restoranteve, dyqaneve dhe atraksioneve kulturore.",
+        prop2Desc1: "Vilë luksoze me pamje mahnitëse deti, pishinë infinity dhe përfundime premium në Plazhin e Durrësit.",
+        prop2Desc2: "Projektuar për mikpritje me kopsht të kuruar, palestër në shtëpi dhe veçori smart home.",
+        prop3Desc1: "Apartament komod familjar përgjatë Lungomares në Vlorë me pamje deti dhe akses në plazh.",
+        prop3Desc2: "Kuzhinë moderne, pajisje smart dhe i përsosur për jetesë të qetë buzë detit.",
+        prop4Desc1: "Shtëpi e gjerë në Kashar me një oborr të madh 800m² dhe planimetri familjare.",
+        prop4Desc2: "Përfshin kuzhinë moderne, oxhak, parkim dhe hapësirë të bollshme të jashtme për mbledhje.",
+        prop5Desc1: "Vilë në kodrat e Dajtit me pishinë resorti dhe pamje panoramike nga mali.",
+        prop5Desc2: "Amenitete luksoze si zonë spa, bodrum vere, smart home dhe kopshte të kuruara.",
+        prop6Desc1: "Penthouse prestigjioze me pamje 360° të skyline në qendër të Tiranës.",
+        prop6Desc2: "Dritare deri në dysheme, tarracë e gjerë dhe concierge për jetesë premium urbane.",
         viewDetails: "Shiko Detajet",
         
         // About Page
@@ -225,6 +312,65 @@ const lang = {
         submitBtn: "Dërgo Mesazhin",
         
         // Footer
+        // Property Detail Pages
+        backToProperties: "Kthehu te Pronat",
+        bedrooms: "Dhoma Gjumi",
+        bathrooms: "Banja",
+        floorArea: "Sipërfaqja e Dyshemesë",
+        aboutThisProperty: "Rreth Kësaj Prone",
+        amenities: "Amenitetet",
+        additionalInfo: "Informacion i Shtesë",
+        contactAgent: "Kontakto Agjentin",
+        propertyType: "Lloji i Pronës",
+        builtYear: "Viti i Ndërtimit",
+        condition: "Kushti",
+        heating: "Ngrohje",
+        excellent: "Ekselente",
+        underfloor: "Ngrohje Nën Dysheme",
+        central: "Qendrore",
+        topFloor: "Kati i Sipërm",
+        penthouse: "Penthouse",
+        agentMessage: "Do t'ju kontaktojmë shpejt pas mesazhit tuaj.",
+        highSpeedInternet: "Internet me Shpejtësi të Lartë",
+        airConditioning: "Ajrim Kondicionuar",
+        elevatorAccess: "Akses me Ashensor",
+        parkingSpace: "Hapësirë Parkimi",
+        security: "Siguri",
+        gymAccess: "Qasje në Palestër",
+        terrace: "Terracë",
+        greenArea: "Zonë e Gjelbër",
+        privateBeachAccess: "Akses Privat në Plazh",
+        infinityPool: "Pishinë Infinity",
+        landscapedGarden: "Oborr i Kuruar",
+        jacuzzi: "Jacuzzi",
+        homeGym: "Palestër në Shtëpi",
+        wineCellar: "Bodrum Vini",
+        outdoorLounge: "Sallë Jashtë",
+        smartHome: "Shtëpi Smart",
+        seaView: "Pamje Deti",
+        beachAccess: "Akses në Plazh",
+        modernKitchen: "Kuzhinë Moderne",
+        wifi: "WiFi",
+        smartTV: "TV Smart",
+        balconyTerrace: "Balkon-Terracë",
+        largeGarden: "Oborr i Madh",
+        fruitTrees: "Pemë Frutash",
+        spaciousRooms: "Dhoma të Gjera",
+        fireplace: "Oxhak",
+        internetReady: "Gati për Internet",
+        resortPool: "Pishinë Resorti",
+        panoramicViews: "Pamje Panoramike",
+        spaArea: "Zonë Spa",
+        securitySystem: "Sistem Siguri",
+        rooftopTerrace: "Terracë mbi Çat",
+        concierge: "Concierge",
+        privateElevator: "Ashensor Privat",
+        privateSpa: "Spa Private",
+        wineBar: "Bar Vini",
+        fullSmartHome: "Smart Home i Plotë",
+        security247: "Siguri 24/7",
+        
+        // Footer
         footerTitle: "HomeSpace",
         footerDesc: "Platformë moderne për prona dhe banesa.",
         footerSocialTitle: "Rrjetet Sociale",
@@ -236,31 +382,3 @@ const lang = {
         footerBottom: "© 2025 HomeSpace — Të gjitha të drejtat e rezervuara."
     }
 };
-
-function setLang(language) {
-    localStorage.setItem("lang", language);
-
-    // navbar
-    if (homeNav) homeNav.innerText = lang[language].homeNav;
-    if (propertiesNav) propertiesNav.innerText = lang[language].propertiesNav;
-    if (aboutNav) aboutNav.innerText = lang[language].aboutNav;
-    if (contactNav) contactNav.innerText = lang[language].contactNav;
-    if (langbtn) langbtn.innerHTML = lang[language].langbtn;
-
-    // content
-    document.querySelectorAll("[data-lang]").forEach(el => {
-        const key = el.dataset.lang;
-        if (!lang[language][key]) return;
-
-        if (key.includes("Content")) {
-            el.innerHTML = lang[language][key];
-        } else {
-            el.innerText = lang[language][key];
-        }
-    });
-}
-
-function initLang() {
-    const savedLang = localStorage.getItem("lang") || "al";
-    setLang(savedLang);
-}

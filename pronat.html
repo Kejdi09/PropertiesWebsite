@@ -4,38 +4,346 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pronat - HomeSpace</title>
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
     <link rel="stylesheet" href="css/style.css">
-</head>
+    <style>
+        /* Properties Page Specific Styles */
+        .properties-hero {
+            background: linear-gradient(135deg, #093ea9 0%, #33C4FF 100%);
+            padding: 80px 20px 40px;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
 
+        .properties-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .properties-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .search-section {
+            background: white;
+            padding: 30px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: -30px 20px 40px;
+            border-radius: 15px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 0;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #33C4FF;
+        }
+
+        .search-box button {
+            background: #093ea9;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s;
+            white-space: nowrap;
+        }
+
+        .search-box button:hover {
+            background: #33C4FF;
+        }
+
+        .filters-section {
+            background: white;
+            padding: 0 20px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 0 20px 40px;
+            border-radius: 15px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .filters-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #0A1A2F;
+            padding: 20px 0 15px 0;
+        }
+
+        .filters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .filter-group label {
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #0A1A2F;
+            font-size: 14px;
+        }
+
+        .filter-group select,
+        .filter-group input {
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        .filter-group select:focus,
+        .filter-group input:focus {
+            outline: none;
+            border-color: #33C4FF;
+        }
+
+        .btn-filter {
+            background: #093ea9;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: auto;
+        }
+
+        .btn-filter:hover {
+            background: #33C4FF;
+        }
+
+        .properties-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .property-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .property-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(9, 62, 169, 0.2);
+        }
+
+        .property-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .property-details {
+            padding: 20px;
+        }
+
+        .property-type {
+            display: inline-block;
+            background: #33C4FF;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .property-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #0A1A2F;
+            margin-bottom: 10px;
+        }
+
+        .property-location {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .property-features {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            flex-wrap: wrap;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .feature i {
+            color: #093ea9;
+        }
+
+        .property-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #093ea9;
+            margin-bottom: 15px;
+        }
+
+        .property-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-details {
+            flex: 1;
+            background: #093ea9;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-details:hover {
+            background: #33C4FF;
+        }
+
+        /* favorite button removed */
+
+        .no-results {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            grid-column: 1 / -1;
+        }
+
+        @media screen and (max-width: 768px) {
+            .properties-hero {
+                padding: 60px 20px 30px;
+            }
+
+            .properties-hero h1 {
+                font-size: 2rem;
+            }
+
+            .properties-hero p {
+                font-size: 1rem;
+            }
+
+            .search-box {
+                flex-direction: column;
+            }
+
+            .search-box input,
+            .search-box button {
+                width: 100%;
+            }
+
+            .filters-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .properties-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .property-image {
+                height: 200px;
+            }
+
+            .property-title {
+                font-size: 1.2rem;
+            }
+
+            .property-price {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .properties-hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .properties-hero p {
+                font-size: 0.9rem;
+            }
+
+            .properties-container {
+                padding: 20px 10px;
+            }
+
+            .properties-grid {
+                gap: 20px;
+            }
+
+            .property-details {
+                padding: 15px;
+            }
+
+            .property-actions {
+                flex-direction: column;
+            }
+
+            .btn-details {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
 <body>
     <div class="page-wrapper">
-        <nav>
-            <a href="index.html" class="logo-link">
-                <div class="logo">
-                    <img src="images/HomeSpaceLogo.png" alt="HomeSpace Logo">
-                    <h1 id="logoNameNav">HomeSpace</h1>
-                </div>
-            </a>
-            <button class="menu-toggle">
-                <i class="fa-solid fa-list"></i>
-            </button>
-            <div class="navRight">
-                <a href="index.html" id="homeNav">Kryefaqja</a>
-                <a href="pronat.html" id="propertiesNav">Pronat</a>
-                <a href="about.html" id="aboutNav">Rreth Nesh</a>
-                <a href="contact.html" id="contactNav">Kontakti</a>
-                <div class="langdiv">
-                    <button class="lang-btn" id="langbtn">🌐 Gjuha</button>
-                    <div class="lang-dropdown">
-                        <button onclick="setLang('en')">English</button>
-                        <button onclick="setLang('al')">Shqip</button>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <!-- HEADER -->
+        <div id="header"></div>
 
         <div class="content">
             <section class="properties-hero">
@@ -44,281 +352,223 @@
             </section>
 
             <section class="filters-section">
+                <div class="filters-title">Advanced Filters</div>
                 <div class="filters-grid">
                     <div class="filter-group">
                         <label data-lang="filterLocation">Lokacioni</label>
-                        <select>
-                            <option>Të gjitha qytetet</option>
-                            <option>Tiranë</option>
-                            <option>Durrës</option>
-                            <option>Vlorë</option>
-                            <option>Shkodër</option>
-                            <option>Elbasan</option>
+                        <select id="locationFilter">
+                            <option value="">Të gjitha qytetet</option>
+                            <option value="Tiranë">Tiranë</option>
+                            <option value="Durrës">Durrës</option>
+                            <option value="Vlorë">Vlorë</option>
+                            <option value="Shkodër">Shkodër</option>
+                            <option value="Elbasan">Elbasan</option>
                         </select>
                     </div>
                     <div class="filter-group">
                         <label data-lang="filterType">Tipi</label>
-                        <select>
-                            <option>Të gjitha tipet</option>
-                            <option>Apartament</option>
-                            <option>Vilë</option>
-                            <option>Shtëpi</option>
-                            <option>Zyrë</option>
+                        <select id="typeFilter">
+                            <option value="">Të gjitha tipet</option>
+                            <option value="Apartament">Apartament</option>
+                            <option value="Vilë">Vilë</option>
+                            <option value="Shtëpi">Shtëpi</option>
                         </select>
                     </div>
                     <div class="filter-group">
                         <label data-lang="filterPrice">Çmimi</label>
-                        <select>
-                            <option>Të gjitha çmimet</option>
-                            <option>Deri në 50,000€</option>
-                            <option>50,000€ - 100,000€</option>
-                            <option>100,000€ - 200,000€</option>
-                            <option>Mbi 200,000€</option>
-                        </select>
+                        <input type="number" id="maxPriceFilter" placeholder="Max price (€)">
                     </div>
                     <div class="filter-group">
-                        <button class="btn-filter" data-lang="filterBtn">Kërko</button>
+                        <button class="btn-filter" onclick="filterProperties()" data-lang="filterBtn">Kërko</button>
                     </div>
                 </div>
             </section>
 
             <section class="properties-container">
-                <div class="properties-grid">
-                    <div class="property-card">
-                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400" alt="Property" class="property-image">
-                        <div class="property-details">
-                            <span class="property-type" data-lang="typeApartment">Apartament</span>
-                            <h3 class="property-title" data-lang="prop1Title">Apartament Modern në Qendër</h3>
-                            <div class="property-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span data-lang="prop1Location">Tiranë, Blloku</span>
-                            </div>
-                            <div class="property-features">
-                                <div class="feature">
-                                    <i class="fas fa-bed"></i>
-                                    <span>3</span>
-                                </div>
-                                <div class="feature">
-                                    <i class="fas fa-bath"></i>
-                                    <span>2</span>
-                                </div>
-                                <div class="feature">
-                                    <i class="fas fa-ruler-combined"></i>
-                                    <span>120m²</span>
-                                </div>
-                            </div>
-                            <div class="property-price">€145,000</div>
-                            <div class="property-actions">
-                                <a href="property_details.html?id=1" class="btn-details" data-lang="viewDetails">
-    Shiko Detajet
-</a>
-
-                                <button class="btn-favorite"><i class="fas fa-heart"></i></button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="property-card">
-                        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400" alt="Property" class="property-image">
-                        <div class="property-details">
-                            <span class="property-type" data-lang="typeVilla">Vilë</span>
-                            <h3 class="property-title" data-lang="prop2Title">Vilë Luksoze me Pamje Deti</h3>
-                            <div class="property-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span data-lang="prop2Location">Durrës, Plazh</span>
-                            </div>
-                            <div class="property-features">
-                                <div class="feature">
-                                    <i class="fas fa-bed"></i>
-                                    <span>5</span>
-                                </div>
-                                <div class="feature">
-                                    <i class="fas fa-bath"></i>
-                                    <span>4</span>
-                                </div>
-                                <div class="feature">
-                                    <i class="fas fa-ruler-combined"></i>
-                                    <span>350m²</span>
-                                </div>
-                            </div>
-                            <div class="property-price">€450,000</div>
-                            <div class="property-actions">
-                                <a href="property_details.html?id=2" class="btn-details" data-lang="viewDetails">
-    Shiko Detajet
-</a>
-
-                                <button class="btn-favorite"><i class="fas fa-heart"></i></button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="property-card">
-                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400" alt="Property" class="property-image">
-                        <div class="property-details">
-                            <span class="property-type" data-lang="typeApartment">Apartament</span>
-                            <h3 class="property-title" data-lang="prop3Title">Apartament Komod Familjar</h3>
-                            <div class="property-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span data-lang="prop3Location">Vlorë, Lungomare</span>
-                            </div>
-                            <div class="property-features">
-                                <div class="feature">
-                                    <i class="fas fa-bed"></i>
-                                    <span>2</span>
-                                </div>
-                                <div class="feature">
-                                    <i class="fas fa-bath"></i>
-                                    <span>1</span>
-                                </div>
-                                <div class="feature">
-                                    <i class="fas fa-ruler-combined"></i>
-                                    <span>85m²</span>
-                                </div>
-                            </div>
-                            <div class="property-price">€95,000</div>
-                            <div class="property-actions">
-                                <a href="property_details.html?id=3" class="btn-details" data-lang="viewDetails">
-    Shiko Detajet
-</a>
-
-                                <button class="btn-favorite"><i class="fas fa-heart"></i></button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="property-card">
-                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400" alt="Property" class="property-image">
-                        <div class="property-details">
-                            <span class="property-type" data-lang="typeHouse">Shtëpi</span>
-                            <h3 class="property-title" data-lang="prop4Title">Shtëpi me Oborr të Madh</h3>
-                            <div class="property-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span data-lang="prop4Location">Tiranë, Kashar</span>
-                            </div>
-                            <div class="property-features">
-                                <div class="feature">
-                                    <i class="fas fa-bed"></i>
-                                    <span>4</span>
-                                </div>
-                                <div class="feature">
-                                    <i class="fas fa-bath"></i>
-                                    <span>3</span>
-                                </div>
-                                <div class="feature">
-                                    <i class="fas fa-ruler-combined"></i>
-                                    <span>200m²</span>
-                                </div>
-                            </div>
-                            <div class="property-price">€220,000</div>
-                            <div class="property-actions">
-                                <a href="property_details.html?id=4" class="btn-details" data-lang="viewDetails">
-    Shiko Detajet
-</a>
-
-                                <button class="btn-favorite"><i class="fas fa-heart"></i></button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="property-card">
-                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400" alt="Property" class="property-image">
-                        <div class="property-details">
-                            <span class="property-type" data-lang="typeVilla">Vilë</span>
-                            <h3 class="property-title" data-lang="prop5Title">Vilë me Pishinë në Kodër</h3>
-                            <div class="property-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span data-lang="prop5Location">Tiranë, Dajti</span>
-                            </div>
-                            <div class="property-features">
-                                <div class="feature">
-                                    <i class="fas fa-bed"></i>
-                                    <span>6</span>
-                                </div>
-                                <div class="feature">
-                                    <i class="fas fa-bath"></i>
-                                    <span>5</span>
-                                </div>
-                                <div class="feature">
-                                    <i class="fas fa-ruler-combined"></i>
-                                    <span>420m²</span>
-                                </div>
-                            </div>
-                            <div class="property-price">€580,000</div>
-                            <div class="property-actions">
-                                <a href="property_details.html?id=5" class="btn-details" data-lang="viewDetails">
-    Shiko Detajet
-</a>
-
-                                <button class="btn-favorite"><i class="fas fa-heart"></i></button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="property-card">
-                        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400" alt="Property" class="property-image">
-                        <div class="property-details">
-                            <span class="property-type" data-lang="typeApartment">Apartament</span>
-                            <h3 class="property-title" data-lang="prop6Title">Penthouse me Panoramë</h3>
-                            <div class="property-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span data-lang="prop6Location">Tiranë, Qendër</span>
-                            </div>
-                            <div class="property-features">
-                                <div class="feature">
-                                    <i class="fas fa-bed"></i>
-                                    <span>4</span>
-                                </div>
-                                <div class="feature">
-                                    <i class="fas fa-bath"></i>
-                                    <span>3</span>
-                                </div>
-                                <div class="feature">
-                                    <i class="fas fa-ruler-combined"></i>
-                                    <span>180m²</span>
-                                </div>
-                            </div>
-                            <div class="property-price">€320,000</div>
-                            <div class="property-actions">
-                                <a href="property_details.html?id=6" class="btn-details" data-lang="viewDetails">
-    Shiko Detajet
-</a>
-
-                                <button class="btn-favorite"><i class="fas fa-heart"></i></button>
-                            </div>
-                        </div>
-                    </div>
+                <div class="properties-grid" id="propertiesGrid">
+                    <!-- Properties will be populated here by JavaScript -->
                 </div>
             </section>
         </div>
 
-        <footer>
-            <div class="footer-container">
-                <div class="footer-col">
-                    <h3 data-lang="footerTitle">HomeSpace</h3>
-                    <p data-lang="footerDesc">Platformë moderne për prona dhe banesa.</p>
-                </div>
-                <div class="footer-col">
-                    <h4 data-lang="footerSocialTitle">Rrjetet Sociale</h4>
-                    <p data-lang="footerInstagram">Instagram: example_22</p>
-                    <p data-lang="footerLinkedIn">LinkedIn: example.com</p>
-                </div>
-                <div class="footer-col">
-                    <h4 data-lang="footerContactTitle">Kontakt</h4>
-                    <p data-lang="footerEmail">Email: info@homespace.com</p>
-                    <p data-lang="footerPhone">Tel: +355 67 000 0000</p>
-                </div>
-                <div class="footer-col footer-logo">
-                    <img src="images/HomeSpaceLogo.png" alt="HomeSpace Logo">
-                </div>
-            </div>
-            <div class="footer-bottom" data-lang="footerBottom">
-                © 2025 HomeSpace — Të gjitha të drejtat e rezervuara.
-            </div>
-        </footer>
+        <!-- FOOTER -->
+        <div id="footer-placeholder"></div>
     </div>
+
+    <script>
+        // Navigation function to property detail pages
+        function goToProperty(id) {
+            window.location.href = 'prop' + id + '.html';
+        }
+
+        // Property data
+        const propertiesData = [
+            {
+                id: 1,
+                image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400",
+                type: "Apartament",
+                titleEn: "Modern Downtown Apartment",
+                titleAl: "Apartament Modern në Qendër",
+                locationEn: "Tirana, Blloku",
+                locationAl: "Tiranë, Blloku",
+                beds: 3,
+                baths: 2,
+                sqm: 120,
+                price: 145000
+            },
+            {
+                id: 2,
+                image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400",
+                type: "Vilë",
+                titleEn: "Luxury Villa with Sea View",
+                titleAl: "Vilë Luksoze me Pamje Deti",
+                locationEn: "Durres, Beach",
+                locationAl: "Durrës, Plazh",
+                beds: 5,
+                baths: 4,
+                sqm: 350,
+                price: 450000
+            },
+            {
+                id: 3,
+                image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400",
+                type: "Apartament",
+                titleEn: "Cozy Family Apartment",
+                titleAl: "Apartament Komod Familjar",
+                locationEn: "Vlore, Lungomare",
+                locationAl: "Vlorë, Lungomare",
+                beds: 2,
+                baths: 1,
+                sqm: 85,
+                price: 95000
+            },
+            {
+                id: 4,
+                image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400",
+                type: "Shtëpi",
+                titleEn: "House with Large Garden",
+                titleAl: "Shtëpi me Oborr të Madh",
+                locationEn: "Tirana, Kashar",
+                locationAl: "Tiranë, Kashar",
+                beds: 4,
+                baths: 3,
+                sqm: 200,
+                price: 220000
+            },
+            {
+                id: 5,
+                image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400",
+                type: "Vilë",
+                titleEn: "Hillside Villa with Pool",
+                titleAl: "Vilë me Pishinë në Kodër",
+                locationEn: "Tirana, Dajti",
+                locationAl: "Tiranë, Dajti",
+                beds: 6,
+                baths: 5,
+                sqm: 420,
+                price: 580000
+            },
+            {
+                id: 6,
+                image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400",
+                type: "Apartament",
+                titleEn: "Penthouse with Panorama",
+                titleAl: "Penthouse me Panoramë",
+                locationEn: "Tirana, Center",
+                locationAl: "Tiranë, Qendër",
+                beds: 4,
+                baths: 3,
+                sqm: 180,
+                price: 320000
+            }
+        ];
+
+        // Render properties
+        function renderProperties(properties) {
+            const grid = document.getElementById('propertiesGrid');
+            const currentLang = localStorage.getItem('selectedLang') || 'al';
+
+            if (properties.length === 0) {
+                const msg = (lang[currentLang] && lang[currentLang].noResults) ? lang[currentLang].noResults : 'No properties found.';
+                grid.innerHTML = `<div class="no-results">${msg}</div>`;
+                return;
+            }
+
+            grid.innerHTML = properties.map(prop => `
+                <div class="property-card" onclick="goToProperty(${prop.id})">
+                    <img src="${prop.image}" alt="Property" class="property-image">
+                    <div class="property-details">
+                        <span class="property-type">${prop.type}</span>
+                        <h3 class="property-title">${currentLang === 'en' ? prop.titleEn : prop.titleAl}</h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>${currentLang === 'en' ? prop.locationEn : prop.locationAl}</span>
+                        </div>
+                        <div class="property-features">
+                            <div class="feature">
+                                <i class="fas fa-bed"></i>
+                                <span>${prop.beds}</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-bath"></i>
+                                <span>${prop.baths}</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>${prop.sqm}m²</span>
+                            </div>
+                        </div>
+                        <div class="property-price">€${prop.price.toLocaleString()}</div>
+                        <div class="property-actions">
+                            <button class="btn-details" data-lang="viewDetails" onclick="goToProperty(${prop.id})">Shiko Detajet</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Re-apply language
+            const savedLang = localStorage.getItem('selectedLang') || 'al';
+            setLang(savedLang);
+        }
+
+        // Search functionality
+        function searchProperties() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = propertiesData.filter(prop => {
+                const titleEn = prop.titleEn.toLowerCase();
+                const titleAl = prop.titleAl.toLowerCase();
+                const locEn = prop.locationEn.toLowerCase();
+                const locAl = prop.locationAl.toLowerCase();
+                return titleEn.includes(searchTerm) || titleAl.includes(searchTerm) || 
+                       locEn.includes(searchTerm) || locAl.includes(searchTerm);
+            });
+            renderProperties(filtered);
+        }
+
+        // Filter functionality
+        function filterProperties() {
+            const location = document.getElementById('locationFilter').value;
+            const type = document.getElementById('typeFilter').value;
+            const maxPrice = parseFloat(document.getElementById('maxPriceFilter').value) || Infinity;
+
+            const filtered = propertiesData.filter(prop => {
+                const locationMatch = !location || prop.locationAl.includes(location) || prop.locationEn.includes(location);
+                const typeMatch = !type || prop.type === type;
+                const priceMatch = prop.price <= maxPrice;
+                return locationMatch && typeMatch && priceMatch;
+            });
+
+            renderProperties(filtered);
+        }
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            loadHeader();
+            renderProperties(propertiesData);
+        });
+    </script>
+
     <script src="js/lang.js"></script>
-<script src="js/functions.js"></script>
+    <script src="js/functionalities.js"></script>
 </body>
 </html>
-
-    

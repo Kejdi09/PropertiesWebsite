@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House with Large Garden - HomeSpace</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .property-detail-hero { background: linear-gradient(135deg, #093ea9 0%, #33C4FF 100%); padding: 100px 20px 60px; text-align: center; color: white; margin-top: 70px; }
+        .property-detail-hero h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 15px; }
+        .property-detail-container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        .detail-wrapper { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
+        .property-images { border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .main-image { width: 100%; height: 400px; object-fit: cover; display: block; }
+        .thumbnail-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; padding: 10px; background: #f5f5f5; }
+        .thumbnail { width: 100%; height: 80px; object-fit: cover; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; border: 2px solid transparent; }
+        .thumbnail:hover { border-color: #33C4FF; transform: scale(1.05); }
+        .property-info { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); height: fit-content; }
+        .property-price { font-size: 2.5rem; font-weight: 700; color: #093ea9; margin-bottom: 20px; }
+        .property-location { display: flex; align-items: center; gap: 10px; color: #666; margin-bottom: 20px; font-size: 1.1rem; }
+        .property-features-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 30px 0; padding: 20px 0; border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; }
+        .feature-item { display: flex; align-items: center; gap: 10px; }
+        .feature-item i { font-size: 1.5rem; color: #33C4FF; }
+        .feature-item strong { display: block; color: #0A1A2F; }
+        .feature-item span { display: block; color: #666; font-size: 0.9rem; }
+        .agent-card { background: linear-gradient(135deg, #093ea9 0%, #33C4FF 100%); color: white; padding: 20px; border-radius: 15px; text-align: center; margin-top: 20px; }
+        .agent-name { font-size: 1.2rem; font-weight: 700; margin: 15px 0 5px 0; }
+        .agent-role { font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px; }
+        .agent-contact { display: flex; gap: 10px; justify-content: center; }
+        .agent-contact a { color: white; padding: 8px 15px; background: rgba(255,255,255,0.2); border-radius: 20px; text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; }
+        .agent-contact a:hover { background: white; color: #093ea9; }
+        .description-section { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); margin-top: 40px; }
+        .description-section h2 { font-size: 1.8rem; color: #0A1A2F; margin-bottom: 20px; }
+        .description-section p { color: #666; line-height: 1.8; margin-bottom: 15px; font-size: 1rem; }
+        .amenities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 30px; }
+        .amenity-item { display: flex; align-items: center; gap: 10px; padding: 15px; background: #f5f5f5; border-radius: 10px; }
+        .amenity-item i { font-size: 1.3rem; color: #33C4FF; }
+        .back-button { display: inline-block; margin-bottom: 20px; padding: 10px 20px; background: #093ea9; color: white; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; }
+        .back-button:hover { background: #33C4FF; }
+        @media screen and (max-width: 768px) {
+            .detail-wrapper { grid-template-columns: 1fr; gap: 30px; }
+            .property-detail-hero h1 { font-size: 1.8rem; }
+            .property-price { font-size: 2rem; }
+            .property-features-detail { grid-template-columns: 1fr; }
+            .main-image { height: 250px; }
+            .thumbnail-gallery { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media screen and (max-width: 480px) {
+            .property-detail-container { padding: 20px 10px; }
+            .property-info { padding: 20px; }
+            .description-section { padding: 20px; }
+            .amenities-grid { grid-template-columns: 1fr; }
+            .thumbnail-gallery { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <div id="header"></div>
+        <div class="content">
+            <div class="property-detail-container">
+                <a href="pronat.html" class="back-button"><i class="fas fa-arrow-left"></i> <span data-lang="backToProperties">Back to Properties</span></a>
+                <div class="detail-wrapper">
+                    <div class="property-images">
+                        <img id="mainImage" src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800" alt="House with Large Garden" class="main-image">
+                        <div class="thumbnail-gallery">
+                            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=200" alt="Image 1" class="thumbnail" onclick="changeMainImage(this.src)">
+                            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=200" alt="Image 2" class="thumbnail" onclick="changeMainImage(this.src)">
+                            <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=200" alt="Image 3" class="thumbnail" onclick="changeMainImage(this.src)">
+                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=200" alt="Image 4" class="thumbnail" onclick="changeMainImage(this.src)">
+                        </div>
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">€220,000</div>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span data-lang="prop4Location">Tirana, Kashar</span>
+                        </div>
+                        <div class="property-features-detail">
+                            <div class="feature-item"><i class="fas fa-bed"></i><div><strong>4</strong><span data-lang="bedrooms">Bedrooms</span></div></div>
+                            <div class="feature-item"><i class="fas fa-bath"></i><div><strong>3</strong><span data-lang="bathrooms">Bathrooms</span></div></div>
+                            <div class="feature-item"><i class="fas fa-ruler-combined"></i><div><strong>200m²</strong><span data-lang="floorArea">Floor Area</span></div></div>
+                            <div class="feature-item"><i class="fas fa-tree"></i><div><strong>800m²</strong><span>Garden</span></div></div>
+                        </div>
+                        <a href="contact.html" class="btn-submit" style="display: block; text-align: center; margin-top: 20px; padding: 12px; text-decoration: none; background: #093ea9; color: white; border-radius: 8px; transition: all 0.3s;"><i class="fas fa-envelope"></i> <span data-lang="contactAgent">Contact Agent</span></a>
+                        <div class="agent-card">
+                            <div style="font-size: 3rem;">👩‍💼</div>
+                            <div class="agent-name">Mirela Hoxha</div>
+                            <div class="agent-role">Senior Agent</div>
+                            <div class="agent-contact" style="justify-content: center;">
+                                <span style="color: white; opacity: 0.95;" data-lang="agentMessage">We will contact you soon after your message.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="description-section">
+                    <h2 data-lang="aboutThisProperty">About This Property</h2>
+                    <p data-lang="prop4Desc1">This beautiful family home in Kashar offers spacious living with a stunning 800m² garden, perfect for outdoor activities and family gatherings. The house is situated in a peaceful residential neighborhood with good access to schools and amenities.</p>
+                    <p data-lang="prop4Desc2">The property features modern architecture, large windows for natural light, and a practical layout. The generous garden includes fruit trees and space for various outdoor projects, making it ideal for families who value privacy and green space.</p>
+                    <h3 style="color: #0A1A2F; margin-top: 25px; margin-bottom: 15px;" data-lang="amenities">Amenities</h3>
+                    <div class="amenities-grid">
+                        <div class="amenity-item"><i class="fas fa-tree"></i><span data-lang="largeGarden">Large Garden</span></div>
+                        <div class="amenity-item"><i class="fas fa-leaf"></i><span data-lang="fruitTrees">Fruit Trees</span></div>
+                        <div class="amenity-item"><i class="fas fa-home"></i><span data-lang="spaciousRooms">Spacious Rooms</span></div>
+                        <div class="amenity-item"><i class="fas fa-parking"></i><span data-lang="parkingSpace">Parking</span></div>
+                        <div class="amenity-item"><i class="fas fa-wind"></i><span data-lang="airConditioning">Air Conditioning</span></div>
+                        <div class="amenity-item"><i class="fas fa-utensils"></i><span data-lang="modernKitchen">Modern Kitchen</span></div>
+                        <div class="amenity-item"><i class="fas fa-fire"></i><span data-lang="fireplace">Fireplace</span></div>
+                        <div class="amenity-item"><i class="fas fa-wifi"></i><span data-lang="internetReady">Internet Ready</span></div>
+                    </div>
+                    <h3 style="color: #0A1A2F; margin-top: 25px; margin-bottom: 15px;" data-lang="additionalInfo">Additional Information</h3>
+                    <p><strong data-lang="propertyType">Property Type</strong>: House | <strong data-lang="builtYear">Built Year</strong>: 2015 | <strong data-lang="condition">Condition</strong>: <span data-lang="excellent">Excellent</span></p>
+                    <p><strong data-lang="heating">Heating</strong>: Central Heating | Garden Size: 800m²</p>
+                </div>
+            </div>
+        </div>
+        <div id="footer-placeholder"></div>
+    </div>
+    <script>
+        function changeMainImage(src) { document.getElementById('mainImage').src = src; }
+    </script>
+    <script src="js/lang.js"></script>
+    <script src="js/functionalities.js"></script>
+</body>
+</html>

@@ -7,250 +7,335 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* About Page Specific Styles */
+        .about-hero {
+            background: linear-gradient(135deg, #093ea9 0%, #33C4FF 100%);
+            padding: 100px 20px 60px;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+
+        .about-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .about-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .about-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .about-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #0A1A2F;
+            text-align: center;
+        }
+
+        .story-content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .story-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #093ea9 0%, #33C4FF 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(9, 62, 169, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .value-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #33C4FF;
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(9, 62, 169, 0.2);
+        }
+
+        .value-card h3 {
+            font-size: 1.4rem;
+            color: #0A1A2F;
+            margin-bottom: 15px;
+        }
+
+        .value-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(9, 62, 169, 0.2);
+        }
+
+        .team-member-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #093ea9 0%, #33C4FF 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .team-member-info {
+            padding: 25px;
+        }
+
+        .team-member-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #0A1A2F;
+            margin-bottom: 5px;
+        }
+
+        .team-member-role {
+            color: #33C4FF;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .team-member-desc {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        @media screen and (max-width: 768px) {
+            .about-hero {
+                padding: 60px 20px 40px;
+            }
+
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-section {
+                padding: 40px 20px;
+            }
+
+            .about-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .story-content {
+                padding: 25px;
+            }
+
+            .story-content p {
+                font-size: 1rem;
+            }
+
+            .stat-card {
+                padding: 30px 20px;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .about-hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .about-section {
+                padding: 30px 15px;
+            }
+
+            .about-section h2 {
+                font-size: 1.4rem;
+                margin-bottom: 20px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="page-wrapper">
-        <nav>
-            <a href="index.html" class="logo-link">
-                <div class="logo">
-                    <img src="images/HomeSpaceLogo.png" alt="HomeSpace Logo">
-                    <h1 id="logoNameNav">HomeSpace</h1>
-                </div>
-            </a>
-            <button class="menu-toggle">
-                <i class="fa-solid fa-list"></i>
-            </button>
-            <div class="navRight">
-                <a href="index.html" id="homeNav">Kryefaqja</a>
-                <a href="pronat.html" id="propertiesNav">Pronat</a>
-                <a href="about.html" id="aboutNav">Rreth Nesh</a>
-                <a href="contact.html" id="contactNav">Kontakti</a>
-                <div class="langdiv">
-                    <button class="lang-btn" id="langbtn">🌐 Gjuha</button>
-                    <div class="lang-dropdown">
-                        <button onclick="setLang('en')">English</button>
-                        <button onclick="setLang('al')">Shqip</button>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <!-- HEADER -->
+        <div id="header"></div>
 
+        <!-- MAIN CONTENT -->
         <div class="content">
+            <!-- ABOUT HERO -->
             <section class="about-hero">
                 <h1 data-lang="aboutHeroTitle">Rreth HomeSpace</h1>
                 <p data-lang="aboutHeroDesc">Misioni ynë është të bëjmë gjetjen e shtëpisë së ëndrrave tuaja të thjeshtë, të sigurt dhe të besueshme.</p>
             </section>
 
-            <div class="about-content">
-                <div class="story-section">
-                    <h2 data-lang="storyTitle">Historia Jonë</h2>
-                    <p data-lang="storyP1">
-                        HomeSpace u themelua në vitin 2020 me një vizion të thjeshtë: të revolucionarizojmë tregun e pasurive të paluajtshme në Shqipëri. Ne kuptuam se procesi i blerjes ose dhënies me qera të një prone shpesh ishte i komplikuar, i pabesueshëm dhe i mbushur me sfida.
-                    </p>
-                    <p data-lang="storyP2">
-                        Ekipi ynë u ngrit nga nevoja për të krijuar një platformë moderne ku transparenca, besimi dhe profesionalizmi janë në qendër të çdo transaksioni. Falë teknologjisë moderne dhe një ekipi të dedikuar profesionistësh, ne kemi ndihmuar mijëra familje dhe individë të gjejnë shtëpinë e tyre ideale.
-                    </p>
-                    <p data-lang="storyP3">
-                        Sot, HomeSpace është një nga platformat më të besueshme të pasurive të paluajtshme në Shqipëri, me mbi 500 prona aktive dhe një rrjet partnerësh në të gjithë vendin.
-                    </p>
+            <!-- STORY SECTION -->
+            <section class="about-section">
+                <h2 data-lang="storyTitle">Historia Jonë</h2>
+                <div class="story-content">
+                    <p data-lang="storyP1">HomeSpace u themelua në vitin 2020 me një vizion të thjeshtë: të revolucionarizojmë tregun e pasurive të paluajtshme në Shqipëri. Ne kuptuam se procesi i blerjes ose dhënies me qera të një prone shpesh ishte i komplikuar, i pabesueshëm dhe i mbushur me sfida.</p>
+                    <p data-lang="storyP2">Ekipi ynë u ngrit nga nevoja për të krijuar një platformë moderne ku transparenca, besimi dhe profesionalizmi janë në qendër të çdo transaksioni. Falë teknologjisë moderne dhe një ekipi të dedikuar profesionistësh, ne kemi ndihmuar mijëra familje dhe individë të gjejnë shtëpinë e tyre ideale.</p>
+                    <p data-lang="storyP3">Sot, HomeSpace është një nga platformat më të besueshme të pasurive të paluajtshme në Shqipëri, me mbi 500 prona aktive dhe një rrjet partnerësh në të gjithë vendin.</p>
                 </div>
 
-                <div class="stats-section">
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <div class="stat-number">500+</div>
-                            <div class="stat-label" data-lang="statProperties">Prona Aktive</div>
+                <!-- STATS -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label" data-lang="statProperties">Prona Aktive</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">2000+</div>
+                        <div class="stat-label" data-lang="statClients">Klientë të Kënaqur</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label" data-lang="statPartners">Partnerë</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">4+</div>
+                        <div class="stat-label" data-lang="statYears">Vite Eksperiencë</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VALUES SECTION -->
+            <section class="about-section" style="background: #f8f8f8;">
+                <h2 data-lang="valuesTitle">Vlerat Tona</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <h3 data-lang="value1Title">Siguri & Besim</h3>
+                        <p data-lang="value1Desc">Çdo pronë verifikohet me kujdes për të garantuar siguri të plotë për ju.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3 data-lang="value2Title">Transparencë</h3>
+                        <p data-lang="value2Desc">Informacion i plotë dhe i qartë për çdo detaj të pronës.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3 data-lang="value3Title">Përkushtim</h3>
+                        <p data-lang="value3Desc">Ekipi ynë punon çdo ditë për të gjetur zgjidhjen perfekte për ju.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3 data-lang="value4Title">Inovacion</h3>
+                        <p data-lang="value4Desc">Teknologji moderne për një përvojë më të mirë kërkimi.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TEAM SECTION -->
+            <section class="about-section">
+                <h2 data-lang="teamTitle">Ekipi Ynë</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="team-member-image">👨‍💼</div>
+                        <div class="team-member-info">
+                            <div class="team-member-name">Driton Kola</div>
+                            <div class="team-member-role" data-lang="roleFounder">Themelues & CEO</div>
+                            <p class="team-member-desc" data-lang="teamDesc1">Vizioni dhe udhëheqësi pas platformës HomeSpace.</p>
                         </div>
-                        <div class="stat-item">
-                            <div class="stat-number">2,000+</div>
-                            <div class="stat-label" data-lang="statClients">Klientë të Kënaqur</div>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-image">👩‍💼</div>
+                        <div class="team-member-info">
+                            <div class="team-member-name">Mirela Hoxha</div>
+                            <div class="team-member-role" data-lang="roleSales">Drejtore Shitjesh</div>
+                            <p class="team-member-desc" data-lang="teamDesc2">Eksperte në pasuritë e paluajtshme me 10 vjet eksperiencë.</p>
                         </div>
-                        <div class="stat-item">
-                            <div class="stat-number">50+</div>
-                            <div class="stat-label" data-lang="statPartners">Partnerë</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">5</div>
-                            <div class="stat-label" data-lang="statYears">Vite Eksperiencë</div>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-image">👨‍💻</div>
+                        <div class="team-member-info">
+                            <div class="team-member-name">Arben Guri</div>
+                            <div class="team-member-role" data-lang="roleTech">Drejtor Teknologjik</div>
+                            <p class="team-member-desc" data-lang="teamDesc3">Zhvillues platformës dhe inovacioneve teknologjike.</p>
                         </div>
                     </div>
                 </div>
-
-                <div class="values-section">
-                    <h2 data-lang="valuesTitle">Vlerat Tona</h2>
-                    <div class="values-grid">
-                        <div class="value-card">
-                            <i class="fas fa-shield-alt"></i>
-                            <h3 data-lang="value1Title">Siguri & Besim</h3>
-                            <p data-lang="value1Desc">Çdo pronë verifikohet me kujdes për të garantuar siguri të plotë për ju.</p>
-                        </div>
-                        <div class="value-card">
-                            <i class="fas fa-handshake"></i>
-                            <h3 data-lang="value2Title">Transparencë</h3>
-                            <p data-lang="value2Desc">Informacion i plotë dhe i qartë për çdo detaj të pronës.</p>
-                        </div>
-                        <div class="value-card">
-                            <i class="fas fa-heart"></i>
-                            <h3 data-lang="value3Title">Përkushtim</h3>
-                            <p data-lang="value3Desc">Ekipi ynë punon çdo ditë për të gjetur zgjidhjen perfekte për ju.</p>
-                        </div>
-                        <div class="value-card">
-                            <i class="fas fa-lightbulb"></i>
-                            <h3 data-lang="value4Title">Inovacion</h3>
-                            <p data-lang="value4Desc">Teknologji moderne për një përvojë më të mirë kërkimi.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-section">
-                    <h2 data-lang="teamTitle">Ekipi Ynë</h2>
-                    <div class="team-grid">
-                        <div class="team-card">
-                            <div class="team-photo">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <h3>Kejdi Muci</h3>
-                            <p class="role" data-lang="roleFounder">Themelues & CEO</p>
-                            <p data-lang="teamDesc1">Vizioni dhe udhëheqësi pas platformës HomeSpace.</p>
-                        </div>
-                        <div class="team-card">
-                            <div class="team-photo">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <h3>Alda Hoxha</h3>
-                            <p class="role" data-lang="roleSales">Drejtore Shitjesh</p>
-                            <p data-lang="teamDesc2">Eksperte në pasuritë e paluajtshme me 10 vjet eksperiencë.</p>
-                        </div>
-                        <div class="team-card">
-                            <div class="team-photo">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <h3>Erion Kola</h3>
-                            <p class="role" data-lang="roleTech">Drejtor Teknologjik</p>
-                            <p data-lang="teamDesc3">Zhvillues platformës dhe inovacioneve teknologjike.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </section>
         </div>
 
-        <footer>
-            <div class="footer-container">
-                <div class="footer-col">
-                    <h3 data-lang="footerTitle">HomeSpace</h3>
-                    <p data-lang="footerDesc">Platformë moderne për prona dhe banesa.</p>
-                </div>
-                <div class="footer-col">
-                    <h4 data-lang="footerSocialTitle">Rrjetet Sociale</h4>
-                    <p data-lang="footerInstagram">Instagram: example_22</p>
-                    <p data-lang="footerLinkedIn">LinkedIn: example.com</p>
-                </div>
-                <div class="footer-col">
-                    <h4 data-lang="footerContactTitle">Kontakt</h4>
-                    <p data-lang="footerEmail">Email: info@homespace.com</p>
-                    <p data-lang="footerPhone">Tel: +355 67 000 0000</p>
-                </div>
-                <div class="footer-col footer-logo">
-                    <img src="HomeSpaceLogo.png" alt="HomeSpace Logo">
-                </div>
-            </div>
-            <div class="footer-bottom" data-lang="footerBottom">
-                © 2025 HomeSpace — Të gjitha të drejtat e rezervuara.
-            </div>
-        </footer>
+        <!-- FOOTER -->
+        <div id="footer-placeholder"></div>
     </div>
-    <script>
-        const lang = {
-            en: {
-                homeNav: "Home",
-                aboutNav: "About",
-                contactNav: "Contact",
-                propertiesNav: "Properties",
-                langbtn: '🌐 Language',
-                aboutHeroTitle: "About HomeSpace",
-                aboutHeroDesc: "Our mission is to make finding your dream home simple, safe, and reliable.",
-                storyTitle: "Our Story",
-                storyP1: "HomeSpace was founded in 2020 with a simple vision: to revolutionize the real estate market in Albania. We understood that the process of buying or renting a property was often complicated, unreliable, and full of challenges.",
-                storyP2: "Our team arose from the need to create a modern platform where transparency, trust, and professionalism are at the center of every transaction. Thanks to modern technology and a dedicated team of professionals, we have helped thousands of families and individuals find their ideal home.",
-                storyP3: "Today, HomeSpace is one of the most trusted real estate platforms in Albania, with over 500 active properties and a network of partners across the country.",
-                statProperties: "Active Properties",
-                statClients: "Satisfied Clients",
-                statPartners: "Partners",
-                statYears: "Years Experience",
-                valuesTitle: "Our Values",
-                value1Title: "Safety & Trust",
-                value1Desc: "Every property is carefully verified to guarantee complete safety for you.",
-                value2Title: "Transparency",
-                value2Desc: "Complete and clear information for every property detail.",
-                value3Title: "Dedication",
-                value3Desc: "Our team works every day to find the perfect solution for you.",
-                value4Title: "Innovation",
-                value4Desc: "Modern technology for a better search experience.",
-                teamTitle: "Our Team",
-                roleFounder: "Founder & CEO",
-                roleSales: "Sales Director",
-                roleTech: "Technology Director",
-                teamDesc1: "The vision and leadership behind the HomeSpace platform.",
-                teamDesc2: "Real estate expert with 10 years of experience.",
-                teamDesc3: "Platform developer and technological innovations.",
-                footerTitle: "HomeSpace",
-                footerDesc: "Modern platform for properties and apartments.",
-                footerSocialTitle: "Social Media",
-                footerInstagram: "Instagram: example_22",
-                footerLinkedIn: "LinkedIn: example.com",
-                footerContactTitle: "Contact",
-                footerEmail: "Email: info@homespace.com",
-                footerPhone: "Phone: +355 67 000 0000",
-                footerBottom: "© 2025 HomeSpace — All rights reserved."
-            },
-            al: {
-                homeNav: "Kryefaqja",
-                aboutNav: "Rreth Nesh",
-                contactNav: "Kontakti",
-                propertiesNav: "Pronat",
-                langbtn: '🌐 Gjuha',
-                aboutHeroTitle: "Rreth HomeSpace",
-                aboutHeroDesc: "Misioni ynë është të bëjmë gjetjen e shtëpisë së ëndrrave tuaja të thjeshtë, të sigurt dhe të besueshme.",
-                storyTitle: "Historia Jonë",
-                storyP1: "HomeSpace u themelua në vitin 2020 me një vizion të thjeshtë: të revolucionarizojmë tregun e pasurive të paluajtshme në Shqipëri. Ne kuptuam se procesi i blerjes ose dhënies me qera të një prone shpesh ishte i komplikuar, i pabesueshëm dhe i mbushur me sfida.",
-                storyP2: "Ekipi ynë u ngrit nga nevoja për të krijuar një platformë moderne ku transparenca, besimi dhe profesionalizmi janë në qendër të çdo transaksioni. Falë teknologjisë moderne dhe një ekipi të dedikuar profesionistësh, ne kemi ndihmuar mijëra familje dhe individë të gjejnë shtëpinë e tyre ideale.",
-                storyP3: "Sot, HomeSpace është një nga platformat më të besueshme të pasurive të paluajtshme në Shqipëri, me mbi 500 prona aktive dhe një rrjet partnerësh në të gjithë vendin.",
-                statProperties: "Prona Aktive",
-                statClients: "Klientë të Kënaqur",
-                statPartners: "Partnerë",
-                statYears: "Vite Eksperiencë",
-                valuesTitle: "Vlerat Tona",
-                value1Title: "Siguri & Besim",
-                value1Desc: "Çdo pronë verifikohet me kujdes për të garantuar siguri të plotë për ju.",
-                value2Title: "Transparencë",
-                value2Desc: "Informacion i plotë dhe i qartë për çdo detaj të pronës.",
-                value3Title: "Përkushtim",
-                value3Desc: "Ekipi ynë punon çdo ditë për të gjetur zgjidhjen perfekte për ju.",
-                value4Title: "Inovacion",
-                value4Desc: "Teknologji moderne për një përvojë më të mirë kërkimi.",
-                teamTitle: "Ekipi Ynë",
-                roleFounder: "Themelues & CEO",
-                roleSales: "Drejtore Shitjesh",
-                roleTech: "Drejtor Teknologjik",
-                teamDesc1: "Vizioni dhe udhëheqësi pas platformës HomeSpace.",
-                teamDesc2: "Eksperte në pasuritë e paluajtshme me 10 vjet eksperiencë.",
-                teamDesc3: "Zhvillues platformës dhe inovacioneve teknologjike.",
-                footerTitle: "HomeSpace",
-                footerDesc: "Platformë moderne për prona dhe banesa.",
-                footerSocialTitle: "Rrjetet Sociale",
-                footerInstagram: "Instagram: example_22",
-                footerLinkedIn: "LinkedIn: example.com",
-                footerContactTitle: "Kontakt",
-                footerEmail: "Email: info@homespace.com",
-                footerPhone: "Tel: +355 67 000 0000",
-                footerBottom: "© 2025 HomeSpace — Të gjitha të drejtat e rezervuara."
-            }
-        };
 
-        
-    </script>
     <script src="js/lang.js"></script>
-    <script src="js/functions.js"></script>
-    
+    <script src="js/functionalities.js"></script>
 </body>
 </html>
